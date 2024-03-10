@@ -11,7 +11,7 @@ export function DicePicker() {
 
   const diceById = useDiceControlsStore((state) => state.diceById);
   const handleDiceCountIncrease = useDiceControlsStore(
-    (state) => state.incrementDieCount
+    (state) => { return (id) => { state.changeDieCount(id, 4); } }
   );
   const clearRoll = useDiceRollStore((state) => state.clearRoll);
   const roll = useDiceRollStore((state) => state.roll);

@@ -23,20 +23,8 @@ export default function FairnessCharts({
 }) {
   const dieCount = useMemo<number>(() => {
     switch (die.type) {
-      case "D4":
-        return 4;
       case "D6":
         return 6;
-      case "D8":
-        return 8;
-      case "D10":
-        return 10;
-      case "D12":
-        return 12;
-      case "D20":
-        return 20;
-      case "D100":
-        return 100;
       default:
         throw Error("Unable to find die count for type" + die.type);
     }
@@ -65,20 +53,8 @@ export default function FairnessCharts({
   // Critical value to pass the Chi-squared test at a 0.05 significance level
   const criticalValue = useMemo<number>(() => {
     switch (die.type) {
-      case "D4":
-        return 9.488;
       case "D6":
         return 12.592;
-      case "D8":
-        return 15.507;
-      case "D10":
-        return 18.307;
-      case "D12":
-        return 21.026;
-      case "D20":
-        return 31.41;
-      case "D100":
-        return 124.342;
       default:
         throw Error("Unable to find critical value for type" + die.type);
     }
